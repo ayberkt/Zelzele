@@ -23,6 +23,8 @@
 		0034F6CF18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0034F6CD18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib */; };
 		0034F75618A42B3D008B29CA /* ZELEarthquakeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F75518A42B3D008B29CA /* ZELEarthquakeViewCell.m */; };
 		0034F75818A42B5F008B29CA /* ZELEarthquakeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0034F75718A42B5F008B29CA /* ZELEarthquakeViewCell.xib */; };
+		0034F75A18A43B57008B29CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F75918A43B57008B29CA /* MapKit.framework */; };
+		0034F75C18A43BC7008B29CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F75B18A43BC7008B29CA /* CoreLocation.framework */; };
 		CF28BC8B1A3E4558AF988DC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8F26A49E0463998B3AD54 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		0034F75418A42B3D008B29CA /* ZELEarthquakeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZELEarthquakeViewCell.h; sourceTree = "<group>"; };
 		0034F75518A42B3D008B29CA /* ZELEarthquakeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZELEarthquakeViewCell.m; sourceTree = "<group>"; };
 		0034F75718A42B5F008B29CA /* ZELEarthquakeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZELEarthquakeViewCell.xib; sourceTree = "<group>"; };
+		0034F75918A43B57008B29CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0034F75B18A43BC7008B29CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D1339B3F9514B14965EC54A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8CB8F26A49E0463998B3AD54 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0034F75C18A43BC7008B29CA /* CoreLocation.framework in Frameworks */,
+				0034F75A18A43B57008B29CA /* MapKit.framework in Frameworks */,
 				0034F69A18A3FBAA008B29CA /* CoreGraphics.framework in Frameworks */,
 				0034F69C18A3FBAA008B29CA /* UIKit.framework in Frameworks */,
 				0034F69818A3FBAA008B29CA /* Foundation.framework in Frameworks */,
@@ -111,6 +117,8 @@
 		0034F69618A3FBAA008B29CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0034F75B18A43BC7008B29CA /* CoreLocation.framework */,
+				0034F75918A43B57008B29CA /* MapKit.framework */,
 				0034F69718A3FBAA008B29CA /* Foundation.framework */,
 				0034F69918A3FBAA008B29CA /* CoreGraphics.framework */,
 				0034F69B18A3FBAA008B29CA /* UIKit.framework */,

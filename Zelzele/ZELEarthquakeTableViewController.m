@@ -6,6 +6,7 @@
 //
 //
 
+#import <MapKit/MapKit.h>
 #import "ZELEarthquakeTableViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "ZELEarthquakeViewCell.h"
@@ -178,22 +179,38 @@
  }
  */
 
-/*
  #pragma mark - Table view delegate
  
  // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
  {
- // Navigation logic may go here, for example:
- // Create the next view controller.
- <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
- 
- // Pass the selected object to the new view controller.
- 
- // Push the view controller.
- [self.navigationController pushViewController:detailViewController animated:YES];
+     NSString *latStr = self.earthquakesDict[@"results"][@"collection1"]
+     [indexPath.row][@"lat"];
+     
+     NSString *longStr = self.earthquakesDict[@"results"][@"collection1"]
+     [indexPath.row][@"long"];
+     
+     CLLocationDegrees latitude = [latStr doubleValue];
+     CLLocationDegrees longitude = [longStr doubleValue];
+     
+     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(latitude, longitude);
+     
+     MKMapView *mapView = [[MKMapView alloc] initWithFrame:self.view.frame];
+     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center,
+                                                                    150000,
+                                                                    150000);
+     
+     MKPointAnnotation *epicenter = [[MKPointAnnotation alloc] init];
+     [epicenter setCoordinate:center];
+     [mapView addAnnotation:epicenter];
+     [mapView setMapType:MKMapTypeHybrid];
+     [mapView setRegion:region animated:YES];
+     
+     UIViewController *mapVC = [[UIViewController alloc] init];
+     [mapVC setView:mapView];
+     
+     [[self navigationController] pushViewController:mapVC animated:YES];
+     // Do fancy stuff.
  }
- 
- */
 
 @end
