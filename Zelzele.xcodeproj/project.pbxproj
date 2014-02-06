@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0034F69818A3FBAA008B29CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F69718A3FBAA008B29CA /* Foundation.framework */; };
+		0034F69A18A3FBAA008B29CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F69918A3FBAA008B29CA /* CoreGraphics.framework */; };
+		0034F69C18A3FBAA008B29CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F69B18A3FBAA008B29CA /* UIKit.framework */; };
+		0034F6A218A3FBAB008B29CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0034F6A018A3FBAB008B29CA /* InfoPlist.strings */; };
+		0034F6A418A3FBAB008B29CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F6A318A3FBAB008B29CA /* main.m */; };
+		0034F6A818A3FBAB008B29CA /* ZELAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F6A718A3FBAB008B29CA /* ZELAppDelegate.m */; };
+		0034F6AA18A3FBAB008B29CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0034F6A918A3FBAB008B29CA /* Images.xcassets */; };
+		0034F6B118A3FBAB008B29CA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F6B018A3FBAB008B29CA /* XCTest.framework */; };
+		0034F6B218A3FBAB008B29CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F69718A3FBAA008B29CA /* Foundation.framework */; };
+		0034F6B318A3FBAB008B29CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F69B18A3FBAA008B29CA /* UIKit.framework */; };
+		0034F6BB18A3FBAB008B29CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0034F6B918A3FBAB008B29CA /* InfoPlist.strings */; };
+		0034F6BD18A3FBAB008B29CA /* ZelzeleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F6BC18A3FBAB008B29CA /* ZelzeleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0034F6B418A3FBAB008B29CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0034F68C18A3FBAA008B29CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0034F69318A3FBAA008B29CA;
+			remoteInfo = Zelzele;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0034F69418A3FBAA008B29CA /* Zelzele.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zelzele.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0034F69718A3FBAA008B29CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0034F69918A3FBAA008B29CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0034F69B18A3FBAA008B29CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0034F69F18A3FBAB008B29CA /* Zelzele-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Zelzele-Info.plist"; sourceTree = "<group>"; };
+		0034F6A118A3FBAB008B29CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0034F6A318A3FBAB008B29CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0034F6A518A3FBAB008B29CA /* Zelzele-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zelzele-Prefix.pch"; sourceTree = "<group>"; };
+		0034F6A618A3FBAB008B29CA /* ZELAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZELAppDelegate.h; sourceTree = "<group>"; };
+		0034F6A718A3FBAB008B29CA /* ZELAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZELAppDelegate.m; sourceTree = "<group>"; };
+		0034F6A918A3FBAB008B29CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0034F6AF18A3FBAB008B29CA /* ZelzeleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZelzeleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0034F6B018A3FBAB008B29CA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0034F6B818A3FBAB008B29CA /* ZelzeleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZelzeleTests-Info.plist"; sourceTree = "<group>"; };
+		0034F6BA18A3FBAB008B29CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0034F6BC18A3FBAB008B29CA /* ZelzeleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZelzeleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0034F69118A3FBAA008B29CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034F69A18A3FBAA008B29CA /* CoreGraphics.framework in Frameworks */,
+				0034F69C18A3FBAA008B29CA /* UIKit.framework in Frameworks */,
+				0034F69818A3FBAA008B29CA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0034F6AC18A3FBAB008B29CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034F6B118A3FBAB008B29CA /* XCTest.framework in Frameworks */,
+				0034F6B318A3FBAB008B29CA /* UIKit.framework in Frameworks */,
+				0034F6B218A3FBAB008B29CA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0034F68B18A3FBAA008B29CA = {
+			isa = PBXGroup;
+			children = (
+				0034F69D18A3FBAB008B29CA /* Zelzele */,
+				0034F6B618A3FBAB008B29CA /* ZelzeleTests */,
+				0034F69618A3FBAA008B29CA /* Frameworks */,
+				0034F69518A3FBAA008B29CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0034F69518A3FBAA008B29CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0034F69418A3FBAA008B29CA /* Zelzele.app */,
+				0034F6AF18A3FBAB008B29CA /* ZelzeleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0034F69618A3FBAA008B29CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0034F69718A3FBAA008B29CA /* Foundation.framework */,
+				0034F69918A3FBAA008B29CA /* CoreGraphics.framework */,
+				0034F69B18A3FBAA008B29CA /* UIKit.framework */,
+				0034F6B018A3FBAB008B29CA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0034F69D18A3FBAB008B29CA /* Zelzele */ = {
+			isa = PBXGroup;
+			children = (
+				0034F6A618A3FBAB008B29CA /* ZELAppDelegate.h */,
+				0034F6A718A3FBAB008B29CA /* ZELAppDelegate.m */,
+				0034F6A918A3FBAB008B29CA /* Images.xcassets */,
+				0034F69E18A3FBAB008B29CA /* Supporting Files */,
+			);
+			path = Zelzele;
+			sourceTree = "<group>";
+		};
+		0034F69E18A3FBAB008B29CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0034F69F18A3FBAB008B29CA /* Zelzele-Info.plist */,
+				0034F6A018A3FBAB008B29CA /* InfoPlist.strings */,
+				0034F6A318A3FBAB008B29CA /* main.m */,
+				0034F6A518A3FBAB008B29CA /* Zelzele-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0034F6B618A3FBAB008B29CA /* ZelzeleTests */ = {
+			isa = PBXGroup;
+			children = (
+				0034F6BC18A3FBAB008B29CA /* ZelzeleTests.m */,
+				0034F6B718A3FBAB008B29CA /* Supporting Files */,
+			);
+			path = ZelzeleTests;
+			sourceTree = "<group>";
+		};
+		0034F6B718A3FBAB008B29CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0034F6B818A3FBAB008B29CA /* ZelzeleTests-Info.plist */,
+				0034F6B918A3FBAB008B29CA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0034F69318A3FBAA008B29CA /* Zelzele */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0034F6C018A3FBAB008B29CA /* Build configuration list for PBXNativeTarget "Zelzele" */;
+			buildPhases = (
+				0034F69018A3FBAA008B29CA /* Sources */,
+				0034F69118A3FBAA008B29CA /* Frameworks */,
+				0034F69218A3FBAA008B29CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zelzele;
+			productName = Zelzele;
+			productReference = 0034F69418A3FBAA008B29CA /* Zelzele.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0034F6AE18A3FBAB008B29CA /* ZelzeleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0034F6C318A3FBAB008B29CA /* Build configuration list for PBXNativeTarget "ZelzeleTests" */;
+			buildPhases = (
+				0034F6AB18A3FBAB008B29CA /* Sources */,
+				0034F6AC18A3FBAB008B29CA /* Frameworks */,
+				0034F6AD18A3FBAB008B29CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0034F6B518A3FBAB008B29CA /* PBXTargetDependency */,
+			);
+			name = ZelzeleTests;
+			productName = ZelzeleTests;
+			productReference = 0034F6AF18A3FBAB008B29CA /* ZelzeleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0034F68C18A3FBAA008B29CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZEL;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Ayberk Tosun";
+				TargetAttributes = {
+					0034F6AE18A3FBAB008B29CA = {
+						TestTargetID = 0034F69318A3FBAA008B29CA;
+					};
+				};
+			};
+			buildConfigurationList = 0034F68F18A3FBAA008B29CA /* Build configuration list for PBXProject "Zelzele" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0034F68B18A3FBAA008B29CA;
+			productRefGroup = 0034F69518A3FBAA008B29CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0034F69318A3FBAA008B29CA /* Zelzele */,
+				0034F6AE18A3FBAB008B29CA /* ZelzeleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0034F69218A3FBAA008B29CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034F6A218A3FBAB008B29CA /* InfoPlist.strings in Resources */,
+				0034F6AA18A3FBAB008B29CA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0034F6AD18A3FBAB008B29CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034F6BB18A3FBAB008B29CA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0034F69018A3FBAA008B29CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034F6A818A3FBAB008B29CA /* ZELAppDelegate.m in Sources */,
+				0034F6A418A3FBAB008B29CA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0034F6AB18A3FBAB008B29CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0034F6BD18A3FBAB008B29CA /* ZelzeleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0034F6B518A3FBAB008B29CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0034F69318A3FBAA008B29CA /* Zelzele */;
+			targetProxy = 0034F6B418A3FBAB008B29CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0034F6A018A3FBAB008B29CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0034F6A118A3FBAB008B29CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0034F6B918A3FBAB008B29CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0034F6BA18A3FBAB008B29CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0034F6BE18A3FBAB008B29CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0034F6BF18A3FBAB008B29CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0034F6C118A3FBAB008B29CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zelzele/Zelzele-Prefix.pch";
+				INFOPLIST_FILE = "Zelzele/Zelzele-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0034F6C218A3FBAB008B29CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zelzele/Zelzele-Prefix.pch";
+				INFOPLIST_FILE = "Zelzele/Zelzele-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0034F6C418A3FBAB008B29CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Zelzele.app/Zelzele";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zelzele/Zelzele-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ZelzeleTests/ZelzeleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0034F6C518A3FBAB008B29CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Zelzele.app/Zelzele";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zelzele/Zelzele-Prefix.pch";
+				INFOPLIST_FILE = "ZelzeleTests/ZelzeleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0034F68F18A3FBAA008B29CA /* Build configuration list for PBXProject "Zelzele" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0034F6BE18A3FBAB008B29CA /* Debug */,
+				0034F6BF18A3FBAB008B29CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0034F6C018A3FBAB008B29CA /* Build configuration list for PBXNativeTarget "Zelzele" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0034F6C118A3FBAB008B29CA /* Debug */,
+				0034F6C218A3FBAB008B29CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0034F6C318A3FBAB008B29CA /* Build configuration list for PBXNativeTarget "ZelzeleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0034F6C418A3FBAB008B29CA /* Debug */,
+				0034F6C518A3FBAB008B29CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0034F68C18A3FBAA008B29CA /* Project object */;
+}
