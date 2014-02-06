@@ -8,6 +8,7 @@
 
 #import "ZELEarthquakeTableViewController.h"
 #import "AFNetworking/AFNetworking.h"
+#import "ZELEarthquakeViewCell.h"
 
 #define API_URL @"http://www.kimonolabs.com/api/de82dvke?apikey=***REMOVED***"
 
@@ -35,6 +36,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UINib *nib = [UINib nibWithNibName:@"ZELEarthquakeViewCell" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"Cell"];
+    
     [self setTitle:@"Earthquakes"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:API_URL]];
@@ -78,10 +82,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ZELEarthquakeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[ZELEarthquakeViewCell alloc] initWithStyle:UITableViewStylePlain reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
@@ -96,10 +100,16 @@
     NSString *dateString = [_earthquakesDict[@"results"][@"collection1"]
                             [indexPath.row][@"date"][@"text"] description];
     
-    [[cell textLabel] setText:provinceName];
-    [[cell detailTextLabel] setText:dateString];
+    [[cell titleLabel] setText:provinceName];
+    
+//    [[cell detailTextLabel] setText:dateString];
     
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
 }
 
 /*

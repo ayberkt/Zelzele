@@ -21,6 +21,8 @@
 		0034F6BD18A3FBAB008B29CA /* ZelzeleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F6BC18A3FBAB008B29CA /* ZelzeleTests.m */; };
 		0034F6CE18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F6CC18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m */; };
 		0034F6CF18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0034F6CD18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib */; };
+		0034F75618A42B3D008B29CA /* ZELEarthquakeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F75518A42B3D008B29CA /* ZELEarthquakeViewCell.m */; };
+		0034F75818A42B5F008B29CA /* ZELEarthquakeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0034F75718A42B5F008B29CA /* ZELEarthquakeViewCell.xib */; };
 		CF28BC8B1A3E4558AF988DC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8F26A49E0463998B3AD54 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,9 @@
 		0034F6CB18A3FDC2008B29CA /* ZELEarthquakeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZELEarthquakeTableViewController.h; sourceTree = "<group>"; };
 		0034F6CC18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZELEarthquakeTableViewController.m; sourceTree = "<group>"; };
 		0034F6CD18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZELEarthquakeTableViewController.xib; sourceTree = "<group>"; };
+		0034F75418A42B3D008B29CA /* ZELEarthquakeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZELEarthquakeViewCell.h; sourceTree = "<group>"; };
+		0034F75518A42B3D008B29CA /* ZELEarthquakeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZELEarthquakeViewCell.m; sourceTree = "<group>"; };
+		0034F75718A42B5F008B29CA /* ZELEarthquakeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZELEarthquakeViewCell.xib; sourceTree = "<group>"; };
 		1D1339B3F9514B14965EC54A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		8CB8F26A49E0463998B3AD54 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +128,9 @@
 				0034F6CB18A3FDC2008B29CA /* ZELEarthquakeTableViewController.h */,
 				0034F6CC18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m */,
 				0034F6CD18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib */,
+				0034F75418A42B3D008B29CA /* ZELEarthquakeViewCell.h */,
+				0034F75518A42B3D008B29CA /* ZELEarthquakeViewCell.m */,
+				0034F75718A42B5F008B29CA /* ZELEarthquakeViewCell.xib */,
 				0034F6A918A3FBAB008B29CA /* Images.xcassets */,
 				0034F69E18A3FBAB008B29CA /* Supporting Files */,
 			);
@@ -239,6 +247,7 @@
 				0034F6A218A3FBAB008B29CA /* InfoPlist.strings in Resources */,
 				0034F6CF18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib in Resources */,
 				0034F6AA18A3FBAB008B29CA /* Images.xcassets in Resources */,
+				0034F75818A42B5F008B29CA /* ZELEarthquakeViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +302,7 @@
 				0034F6CE18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m in Sources */,
 				0034F6A818A3FBAB008B29CA /* ZELAppDelegate.m in Sources */,
 				0034F6A418A3FBAB008B29CA /* main.m in Sources */,
+				0034F75618A42B3D008B29CA /* ZELEarthquakeViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
