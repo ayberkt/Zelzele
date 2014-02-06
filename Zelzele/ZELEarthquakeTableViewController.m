@@ -102,6 +102,33 @@
     
     [[cell titleLabel] setText:provinceName];
     
+    NSString *magnitudeString = _earthquakesDict[@"results"][@"collection1"]
+     [indexPath.row][@"magnitude"];
+    
+    float magnitude = [magnitudeString floatValue];
+    float colorRatio = magnitude/4.5;
+    // An earthquake greater than 4.5 is a rare ocurrence
+    // so whenever that happens set the color to red.
+    // Otherwise 4.5 is a fine limit to have varying color spectrum.
+    if (magnitude > 4.5) {
+        colorRatio = 1.0;
+    }
+    
+    UIColor *customColor = [UIColor
+                            colorWithHue:colorRatio
+                            saturation:1.0
+                            brightness:1.0
+                            alpha:1.0];
+    
+    if (magnitude <= 3.0) {
+        [cell.magnitudeLabel setBackgroundColor:customColor];
+    } else if (magnitude <= 5.0) {
+        [cell.magnitudeLabel setBackgroundColor:[UIColor yellowColor]];
+    } else {
+        [cell.magnitudeLabel setBackgroundColor:[UIColor redColor]];
+    }
+    [cell.magnitudeLabel setText:magnitudeString];
+    
 //    [[cell detailTextLabel] setText:dateString];
     
     return cell;
