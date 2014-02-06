@@ -107,30 +107,22 @@
      [indexPath.row][@"magnitude"];
     
     float magnitude = [magnitudeString floatValue];
-    float colorRatio = magnitude/4.5;
-    // An earthquake greater than 4.5 is a rare ocurrence
-    // so whenever that happens set the color to red.
-    // Otherwise 4.5 is a fine limit to have varying color spectrum.
-    if (magnitude > 4.5) {
-        colorRatio = 1.0;
-    }
-    
+    float colorRatio = magnitude/6;
     UIColor *customColor = [UIColor
-                            colorWithHue:colorRatio
-                            saturation:1.0
-                            brightness:1.0
+                            colorWithRed:colorRatio + 0.5
+                            green:1 - colorRatio + 0.5
+                            blue:0.0
                             alpha:1.0];
     
-    if (magnitude <= 3.0) {
-        [cell.magnitudeLabel setBackgroundColor:customColor];
-    } else if (magnitude <= 5.0) {
-        [cell.magnitudeLabel setBackgroundColor:[UIColor yellowColor]];
-    } else {
-        [cell.magnitudeLabel setBackgroundColor:[UIColor redColor]];
-    }
+    // An earthquake greater than 5.5 is a rare ocurrence
+    // so whenever that happens set the color to red.
+    // Otherwise 5.5 is a fine limit to have varying color spectrum.
+    
+    [[cell magnitudeLabel] setBackgroundColor:customColor];
+    
     [cell.magnitudeLabel setText:magnitudeString];
     
-//    [[cell detailTextLabel] setText:dateString];
+    [[cell dateLabel] setText:dateString];
     
     return cell;
 }
@@ -193,16 +185,15 @@
      CLLocationDegrees latitude = [latStr doubleValue];
      CLLocationDegrees longitude = [longStr doubleValue];
      
-     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(latitude, longitude);
+     CLLocationCoordinate2D epicenter = CLLocationCoordinate2DMake(latitude, longitude);
+     MKPointAnnotation *epicenterPin = [[MKPointAnnotation alloc] init];
+     [epicenterPin setCoordinate:epicenter];
      
      MKMapView *mapView = [[MKMapView alloc] initWithFrame:self.view.frame];
-     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center,
-                                                                    150000,
-                                                                    150000);
-     
-     MKPointAnnotation *epicenter = [[MKPointAnnotation alloc] init];
-     [epicenter setCoordinate:center];
-     [mapView addAnnotation:epicenter];
+     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(epicenter,
+                                                                    300000,
+                                                                    300000);
+     [mapView addAnnotation:epicenterPin];
      [mapView setMapType:MKMapTypeHybrid];
      [mapView setRegion:region animated:YES];
      
@@ -210,7 +201,6 @@
      [mapVC setView:mapView];
      
      [[self navigationController] pushViewController:mapVC animated:YES];
-     // Do fancy stuff.
  }
 
 @end

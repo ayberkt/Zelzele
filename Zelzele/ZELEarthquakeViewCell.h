@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *magnitudeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
