@@ -7,15 +7,23 @@
 //
 
 #import "ZELAppDelegate.h"
+#import "ZELEarthquakeTableViewController.h"
 
 @implementation ZELAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    // Override point for customization after application launch.
+    UINavigationController *navController = [[UINavigationController alloc] init];
+    ZELEarthquakeTableViewController *earthquakeList = [[ZELEarthquakeTableViewController alloc] init];
+    
+    [navController setViewControllers:@[earthquakeList]];
+    
+    [self.window setRootViewController:navController];
+    
     return YES;
 }
 

@@ -19,6 +19,9 @@
 		0034F6B318A3FBAB008B29CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0034F69B18A3FBAA008B29CA /* UIKit.framework */; };
 		0034F6BB18A3FBAB008B29CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0034F6B918A3FBAB008B29CA /* InfoPlist.strings */; };
 		0034F6BD18A3FBAB008B29CA /* ZelzeleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F6BC18A3FBAB008B29CA /* ZelzeleTests.m */; };
+		0034F6CE18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034F6CC18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m */; };
+		0034F6CF18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0034F6CD18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib */; };
+		CF28BC8B1A3E4558AF988DC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8F26A49E0463998B3AD54 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		0034F6B818A3FBAB008B29CA /* ZelzeleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZelzeleTests-Info.plist"; sourceTree = "<group>"; };
 		0034F6BA18A3FBAB008B29CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0034F6BC18A3FBAB008B29CA /* ZelzeleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZelzeleTests.m; sourceTree = "<group>"; };
+		0034F6CB18A3FDC2008B29CA /* ZELEarthquakeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZELEarthquakeTableViewController.h; sourceTree = "<group>"; };
+		0034F6CC18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZELEarthquakeTableViewController.m; sourceTree = "<group>"; };
+		0034F6CD18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZELEarthquakeTableViewController.xib; sourceTree = "<group>"; };
+		1D1339B3F9514B14965EC54A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8CB8F26A49E0463998B3AD54 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 				0034F69A18A3FBAA008B29CA /* CoreGraphics.framework in Frameworks */,
 				0034F69C18A3FBAA008B29CA /* UIKit.framework in Frameworks */,
 				0034F69818A3FBAA008B29CA /* Foundation.framework in Frameworks */,
+				CF28BC8B1A3E4558AF988DC1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +90,7 @@
 				0034F6B618A3FBAB008B29CA /* ZelzeleTests */,
 				0034F69618A3FBAA008B29CA /* Frameworks */,
 				0034F69518A3FBAA008B29CA /* Products */,
+				1D1339B3F9514B14965EC54A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +110,7 @@
 				0034F69918A3FBAA008B29CA /* CoreGraphics.framework */,
 				0034F69B18A3FBAA008B29CA /* UIKit.framework */,
 				0034F6B018A3FBAB008B29CA /* XCTest.framework */,
+				8CB8F26A49E0463998B3AD54 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +120,9 @@
 			children = (
 				0034F6A618A3FBAB008B29CA /* ZELAppDelegate.h */,
 				0034F6A718A3FBAB008B29CA /* ZELAppDelegate.m */,
+				0034F6CB18A3FDC2008B29CA /* ZELEarthquakeTableViewController.h */,
+				0034F6CC18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m */,
+				0034F6CD18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib */,
 				0034F6A918A3FBAB008B29CA /* Images.xcassets */,
 				0034F69E18A3FBAB008B29CA /* Supporting Files */,
 			);
@@ -151,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0034F6C018A3FBAB008B29CA /* Build configuration list for PBXNativeTarget "Zelzele" */;
 			buildPhases = (
+				F39A6629675846CE8997D892 /* Check Pods Manifest.lock */,
 				0034F69018A3FBAA008B29CA /* Sources */,
 				0034F69118A3FBAA008B29CA /* Frameworks */,
 				0034F69218A3FBAA008B29CA /* Resources */,
+				2FD43067BA184924BD3B20EE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0034F6A218A3FBAB008B29CA /* InfoPlist.strings in Resources */,
+				0034F6CF18A3FDC2008B29CA /* ZELEarthquakeTableViewController.xib in Resources */,
 				0034F6AA18A3FBAB008B29CA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,11 +252,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FD43067BA184924BD3B20EE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F39A6629675846CE8997D892 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0034F69018A3FBAA008B29CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0034F6CE18A3FDC2008B29CA /* ZELEarthquakeTableViewController.m in Sources */,
 				0034F6A818A3FBAB008B29CA /* ZELAppDelegate.m in Sources */,
 				0034F6A418A3FBAB008B29CA /* main.m in Sources */,
 			);
@@ -359,6 +410,7 @@
 		};
 		0034F6C118A3FBAB008B29CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D1339B3F9514B14965EC54A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -372,6 +424,7 @@
 		};
 		0034F6C218A3FBAB008B29CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D1339B3F9514B14965EC54A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -444,6 +497,7 @@
 				0034F6C218A3FBAB008B29CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0034F6C318A3FBAB008B29CA /* Build configuration list for PBXNativeTarget "ZelzeleTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +506,7 @@
 				0034F6C518A3FBAB008B29CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
