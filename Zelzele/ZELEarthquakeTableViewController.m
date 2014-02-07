@@ -200,7 +200,7 @@
      
      CLLocationDistance distance = [[self.locationManager location]
                            distanceFromLocation:epicenterLoc];
-     NSString *distanceString = [NSString stringWithFormat:@"%f km", distance/1000];
+     NSString *distanceString = [NSString stringWithFormat:@"Distance to you: %0.1f km", distance/1000];
      NSLog(@"%@", distanceString);
      
      MKPointAnnotation *epicenterPin = [[MKPointAnnotation alloc] init];
@@ -210,6 +210,21 @@
      MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(epicenter,
                                                                     300000,
                                                                     300000);
+     
+     CGRect viewFrame = self.view.frame;
+     UILabel *distanceLabel = [[UILabel alloc]
+                               initWithFrame:CGRectMake(self.view.center.x - viewFrame.size.width/2.0,
+                                                        viewFrame.origin.y + [self.topLayoutGuide length],
+                                                        viewFrame.size.width,
+                                                        40)];
+     [distanceLabel setTextAlignment:NSTextAlignmentCenter];
+     [distanceLabel setBackgroundColor:[UIColor lightGrayColor]];
+     
+     [distanceLabel setTextColor:[UIColor whiteColor]];
+     
+     [mapView addSubview:distanceLabel];
+     [distanceLabel setText:distanceString];
+     
      [mapView addAnnotation:epicenterPin];
      [mapView setMapType:MKMapTypeHybrid];
      [mapView setRegion:region animated:YES];
