@@ -24,6 +24,10 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.locationManager = [[CLLocationManager alloc] init];
+        [self.locationManager setDelegate:self];
+        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+        [self.locationManager startUpdatingLocation];
     }
     return self;
 }
@@ -132,6 +136,12 @@
     return 80;
 }
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"Locations number: %d", [locations count]);
+}
+
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -186,6 +196,13 @@
      CLLocationDegrees longitude = [longStr doubleValue];
      
      CLLocationCoordinate2D epicenter = CLLocationCoordinate2DMake(latitude, longitude);
+     CLLocation *epicenterLoc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+     
+     CLLocationDistance distance = [[self.locationManager location]
+                           distanceFromLocation:epicenterLoc];
+     NSString *distanceString = [NSString stringWithFormat:@"%f km", distance/1000];
+     NSLog(@"%@", distanceString);
+     
      MKPointAnnotation *epicenterPin = [[MKPointAnnotation alloc] init];
      [epicenterPin setCoordinate:epicenter];
      
