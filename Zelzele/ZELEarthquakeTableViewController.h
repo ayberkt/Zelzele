@@ -14,6 +14,4 @@
 
 @property (nonatomic, strong) NSDictionary *earthquakesDict;
 
-@property (nonatomic) CLLocationManager *locationManager;
-
 @end

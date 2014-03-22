@@ -17,6 +17,8 @@
 
 @interface ZELEarthquakeTableViewController ()
 
+@property (nonatomic, strong) CLLocationManager *locationManager;
+
 @end
 
 @implementation ZELEarthquakeTableViewController
@@ -48,7 +50,7 @@
     
     [self setTitle:@"Earthquakes"];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:API_URL]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[API_URL stringByAppendingString:API_KEY]]];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -74,15 +76,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return [_earthquakesDict[@"results"][@"collection1"] count];
 }
 
@@ -110,7 +108,7 @@
     [[cell titleLabel] setText:provinceName];
     
     NSString *magnitudeString = _earthquakesDict[@"results"][@"collection1"]
-     [indexPath.row][@"magnitude"];
+    [indexPath.row][@"magnitude"];
     
     float magnitude = [magnitudeString floatValue];
     float colorRatio = magnitude/6;
@@ -119,10 +117,6 @@
                             green:1 - colorRatio + 0.5
                             blue:0.0
                             alpha:1.0];
-    
-    // An earthquake greater than 5.5 is a rare ocurrence
-    // so whenever that happens set the color to red.
-    // Otherwise 5.5 is a fine limit to have varying color spectrum.
     
     [[cell magnitudeLabel] setBackgroundColor:customColor];
     
@@ -144,97 +138,57 @@
     NSLog(@"Locations number: %d", [locations count]);
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+#pragma mark - Table view delegate
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
- #pragma mark - Table view delegate
- 
- // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
- - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
- {
-     NSString *latStr = self.earthquakesDict[@"results"][@"collection1"]
-     [indexPath.row][@"lat"];
-     
-     NSString *longStr = self.earthquakesDict[@"results"][@"collection1"]
-     [indexPath.row][@"long"];
-     
-     CLLocationDegrees latitude = [latStr doubleValue];
-     CLLocationDegrees longitude = [longStr doubleValue];
-     
-     CLLocationCoordinate2D epicenter = CLLocationCoordinate2DMake(latitude, longitude);
-     CLLocation *epicenterLoc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
-     
-     CLLocationDistance distance = [[self.locationManager location]
-                           distanceFromLocation:epicenterLoc];
-     NSString *distanceString = [NSString stringWithFormat:@"Distance to you: %0.1f km", distance/1000];
-     NSLog(@"%@", distanceString);
-     
-     MKPointAnnotation *epicenterPin = [[MKPointAnnotation alloc] init];
-     [epicenterPin setCoordinate:epicenter];
-     
-     MKMapView *mapView = [[MKMapView alloc] initWithFrame:self.view.frame];
-     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(epicenter,
-                                                                    300000,
-                                                                    300000);
-     
-     CGRect viewFrame = self.view.frame;
-     UILabel *distanceLabel = [[UILabel alloc]
-                               initWithFrame:CGRectMake(self.view.center.x - viewFrame.size.width/2.0,
-                                                        viewFrame.origin.y + [self.topLayoutGuide length],
-                                                        viewFrame.size.width,
-                                                        40)];
-     [distanceLabel setTextAlignment:NSTextAlignmentCenter];
-     [distanceLabel setBackgroundColor:[UIColor lightGrayColor]];
-     
-     [distanceLabel setTextColor:[UIColor whiteColor]];
-     
-     [mapView addSubview:distanceLabel];
-     [distanceLabel setText:distanceString];
-     
-     [mapView addAnnotation:epicenterPin];
-     [mapView setMapType:MKMapTypeHybrid];
-     [mapView setRegion:region animated:YES];
-     
-     UIViewController *mapVC = [[UIViewController alloc] init];
-     [mapVC setView:mapView];
-     
-     [[self navigationController] pushViewController:mapVC animated:YES];
- }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *latStr = self.earthquakesDict[@"results"][@"collection1"]
+    [indexPath.row][@"lat"];
+    
+    NSString *longStr = self.earthquakesDict[@"results"][@"collection1"]
+    [indexPath.row][@"long"];
+    
+    CLLocationDegrees latitude = [latStr doubleValue];
+    CLLocationDegrees longitude = [longStr doubleValue];
+    
+    CLLocationCoordinate2D epicenter = CLLocationCoordinate2DMake(latitude, longitude);
+    CLLocation *epicenterLoc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    
+    CLLocationDistance distance = [[self.locationManager location]
+                                   distanceFromLocation:epicenterLoc];
+    NSString *distanceString = [NSString stringWithFormat:@"Distance to you: %0.1f km", distance/1000];
+    NSLog(@"%@", distanceString);
+    
+    MKPointAnnotation *epicenterPin = [[MKPointAnnotation alloc] init];
+    [epicenterPin setCoordinate:epicenter];
+    
+    MKMapView *mapView = [[MKMapView alloc] initWithFrame:self.view.frame];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(epicenter,
+                                                                   300000,
+                                                                   300000);
+    
+    CGRect viewFrame = self.view.frame;
+    UILabel *distanceLabel = [[UILabel alloc]
+                              initWithFrame:CGRectMake(self.view.center.x - viewFrame.size.width/2.0,
+                                                       viewFrame.origin.y + [self.topLayoutGuide length],
+                                                       viewFrame.size.width,
+                                                       40)];
+    [distanceLabel setTextAlignment:NSTextAlignmentCenter];
+    [distanceLabel setBackgroundColor:[UIColor lightGrayColor]];
+    
+    [distanceLabel setTextColor:[UIColor whiteColor]];
+    
+    [mapView addSubview:distanceLabel];
+    [distanceLabel setText:distanceString];
+    
+    [mapView addAnnotation:epicenterPin];
+    [mapView setMapType:MKMapTypeHybrid];
+    [mapView setRegion:region animated:YES];
+    
+    UIViewController *mapVC = [[UIViewController alloc] init];
+    [mapVC setView:mapView];
+    
+    [[self navigationController] pushViewController:mapVC animated:YES];
+}
 
 @end
