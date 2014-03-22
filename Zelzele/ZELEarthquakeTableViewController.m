@@ -6,7 +6,6 @@
 //
 //
 
-#import <MapKit/MapKit.h>
 #import "ZELEarthquakeTableViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "ZELEarthquakeViewCell.h"
@@ -173,13 +172,8 @@
                                                        viewFrame.origin.y + [self.topLayoutGuide length],
                                                        viewFrame.size.width,
                                                        40)];
-    [distanceLabel setTextAlignment:NSTextAlignmentCenter];
-    [distanceLabel setBackgroundColor:[UIColor lightGrayColor]];
-    
-    [distanceLabel setTextColor:[UIColor whiteColor]];
     
     [mapView addSubview:distanceLabel];
-    [distanceLabel setText:distanceString];
     
     [mapView addAnnotation:epicenterPin];
     [mapView setMapType:MKMapTypeHybrid];

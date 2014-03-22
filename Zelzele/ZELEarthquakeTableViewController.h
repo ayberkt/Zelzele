@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@class CLLocationManager;
-
-@interface ZELEarthquakeTableViewController : UITableViewController
+@interface ZELEarthquakeTableViewController : UITableViewController <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) NSDictionary *earthquakesDict;
 
