@@ -166,15 +166,6 @@
                                                                    300000,
                                                                    300000);
     
-    CGRect viewFrame = self.view.frame;
-    UILabel *distanceLabel = [[UILabel alloc]
-                              initWithFrame:CGRectMake(self.view.center.x - viewFrame.size.width/2.0,
-                                                       viewFrame.origin.y + [self.topLayoutGuide length],
-                                                       viewFrame.size.width,
-                                                       40)];
-    
-    [mapView addSubview:distanceLabel];
-    
     [mapView addAnnotation:epicenterPin];
     [mapView setMapType:MKMapTypeHybrid];
     [mapView setRegion:region animated:YES];
