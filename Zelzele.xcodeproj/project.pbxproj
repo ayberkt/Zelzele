@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000054FB18DDF1A300BBF5A3 /* API_KEY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API_KEY.h; sourceTree = "<group>"; };
 		0034F69418A3FBAA008B29CA /* Zelzele.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zelzele.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0034F69718A3FBAA008B29CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0034F69918A3FBAA008B29CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,6 +153,7 @@
 				0034F6A018A3FBAB008B29CA /* InfoPlist.strings */,
 				0034F6A318A3FBAB008B29CA /* main.m */,
 				0034F6A518A3FBAB008B29CA /* Zelzele-Prefix.pch */,
+				000054FB18DDF1A300BBF5A3 /* API_KEY.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

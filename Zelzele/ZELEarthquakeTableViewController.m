@@ -11,7 +11,9 @@
 #import "AFNetworking/AFNetworking.h"
 #import "ZELEarthquakeViewCell.h"
 
-#define API_URL @"http://www.kimonolabs.com/api/de82dvke?apikey=59d4c680d16190d5be90519f464f2770"
+#include "API_KEY.h"
+
+#define API_URL @"http://www.kimonolabs.com/api/de82dvke?apikey="
 
 @interface ZELEarthquakeTableViewController ()
 
