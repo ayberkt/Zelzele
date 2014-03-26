@@ -57,7 +57,7 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@", responseObject);
         self.earthquakesDict = responseObject;
-        NSLog(@"Count: %d", [responseObject[@"results"][@"collection1"] count]);
+        NSLog(@"Count: %lu", (unsigned long)[responseObject[@"results"][@"collection1"] count]);
         [self.tableView reloadData];
     } failure:nil];
     
@@ -89,7 +89,7 @@
     ZELEarthquakeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[ZELEarthquakeViewCell alloc] initWithStyle:UITableViewStylePlain reuseIdentifier:CellIdentifier];
+        cell = [[ZELEarthquakeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
@@ -97,6 +97,7 @@
     NSString *provinceName = [_earthquakesDict[@"results"]
                               [@"collection1"]
                               [indexPath.row][@"province"] description];
+    
     if ([provinceName isEqualToString:@"-"]) {
         provinceName = @"Unkown Province";
     }
@@ -134,7 +135,7 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"Locations number: %d", [locations count]);
+    NSLog(@"Locations number: %lu", (unsigned long)[locations count]);
 }
 
 #pragma mark - Table view delegate
