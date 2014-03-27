@@ -22,32 +22,26 @@
 
 @implementation ZELEarthquakeTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
+    
     if (self) {
-        // Custom initialization
         self.locationManager = [[CLLocationManager alloc] init];
-        [self.locationManager setDelegate:self];
-        [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy =  kCLLocationAccuracyHundredMeters;
+        
         [self.locationManager startUpdatingLocation];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     UINib *nib = [UINib nibWithNibName:@"ZELEarthquakeViewCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"Cell"];
     
-    [self setTitle:@"Earthquakes"];
+    self.title = @"Earthquakes";
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[API_URL stringByAppendingString:API_KEY]]];
     
@@ -65,34 +59,23 @@
     [operation start];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_earthquakesDict[@"results"][@"collection1"] count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     ZELEarthquakeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
         cell = [[ZELEarthquakeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    // Configure the cell...
     
     NSString *provinceName = [_earthquakesDict[@"results"]
                               [@"collection1"]
@@ -127,21 +110,13 @@
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80;
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"Locations number: %lu", (unsigned long)[locations count]);
 }
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *latStr = self.earthquakesDict[@"results"][@"collection1"]
     [indexPath.row][@"lat"];
     
@@ -175,6 +150,13 @@
     [mapVC setView:mapView];
     
     [[self navigationController] pushViewController:mapVC animated:YES];
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"Locations number: %lu", (unsigned long)[locations count]);
 }
 
 @end
